@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5d4f47be-9391-4251-a84e-fa256c5ca781" name="Bachelor2017" url="http://www.youpron.com">
+        <fileTransfer host="www.youpron.com" port="22" privateKey="C:\Users\Antoi\Desktop\bordel\PuTTY\keygen\private.ppk" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

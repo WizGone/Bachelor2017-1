@@ -17,46 +17,131 @@
 
     <body>
 
-    <div class="container">
+    <!-- Mise en place d'une div container -->
+    <div class="container2">
         <div class="play">
+            <!-- Création des boutons Play et F5 -->
             <button type="button" class="playButton btn btn-outline-dark">Jouer</button>
+            <button type="button" class="F5 btn btn-outline-dark" disabled>F5</button>
         </div>
         <div class="lettre">
-            <div class="consomne">
-                <button type="button" class="cache btnConsomne btn btn-dark">Consomne</button>
-            </div>
-            <div class="voyelle">
-                <button type="button" class="cache btnVoyelle btn btn-dark">Voyelle</button>
+            <!-- Création des boutons générant les lettres-->
+            <div class="button">
+                <div class="consomne">
+                    <!-- Bouton Consomne -->
+                    <button type="button" class="cache btnConsomne btn btn-dark">Consomne</button>
+                </div>
+                <div class="voyelle">
+                    <!-- Bouton Voyelle -->
+                    <button type="button" class="cache btnVoyelle btn btn-dark">Voyelle</button>
+                </div>
             </div>
             <div class="tableauLettre">
-                <table class="table">
+                <!-- Création du bouton de reset -->
+                <div class="resetLettre">
+                    <button class="btn btn-dark btnResetLettre" disabled>Reset</button>
+                </div>
+                <!-- Affichage tableau comptenant les lettres aléatoire -->
+                <div class="tableau">
+                    <table>
+                        <tr>
+                            <td>
+                                <button id="Lettre1" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre2" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre3" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre4" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre5" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre6" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre7" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre8" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                            <td>
+                                <button id="Lettre9" class="Lettre btn btn-white" style="display:none" disabled>
+
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Création du tableau qui va comptenir le mot trouvé -->
+            <div class="tableauReponse">
+                <table>
                     <tr>
                         <td>
+                            <button id="Reponse1" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse2" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse3" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse4" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse5" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse6" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse7" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse8" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                         <td>
+                            <button id="Reponse9" class="Reponse btn btn-info" style="display:none" disabled>
 
+                            </button>
                         </td>
                     </tr>
                 </table>

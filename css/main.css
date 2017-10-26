@@ -97,7 +97,73 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.container2{
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+}
 
+.play{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.lettre{
+    display: flex;
+    flex-direction: column;
+}
+
+.playButton{
+    visibility: visible;
+}
+
+.F5{
+    visibility: visible;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+}
+
+.cache{
+    display: none;
+}
+
+.voyelle{
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    margin: auto;
+}
+
+.consomne{
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    margin: auto;
+}
+
+.tableauLettre{
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    margin: auto;
+}
+
+.btnResetLettre{
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    margin: auto;
+    display: none;
+}
+
+.tableauReponse{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
 
 
 

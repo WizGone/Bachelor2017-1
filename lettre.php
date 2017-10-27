@@ -38,7 +38,6 @@ if($_GET['type'] == "voyelle"){
 /**
  * Envoie des nouvelles stats
  */
-//$sql = $conn->prepare('UPDATE table SET nbAppel = '.$tmp.' WHERE lettre = "'.$value.'";');
 $sql = $conn->prepare('UPDATE lettre SET nbAppel = nbAppel+1 WHERE lettre = :lettre ;');
 
 try {

@@ -15,29 +15,20 @@ var i = 1;
      * Clique du bouton Jouer
      */
     $(".playButton").click(function(){
-        /**
-         * Désactive le button Play
-         * @type {boolean}
-         */
-        this.disabled = true;
-        /**
-         * Fait apparaitre les boutons Consomne et Voyelle
-         */
-        $(".btnConsomne").show("slow");
-        $(".btnVoyelle").show("slow");
+        this.disabled = true;                                                                                           // Désactive le bouton Play
+
+        $(".btnConsomne").show("slow");                                                                                 // Faire apparaitre le bouton Consomne
+        $(".btnVoyelle").show("slow");                                                                                  // Faire apparaitre le bouton Voyelle
     });
 
     /**
      * Clique du bouton Consomne
      */
     $(".btnConsomne").click(function () {
-        /**
-         * Permet de récupérer une consomne depuis le fichier lettre.php
-         */
-        $.get('/lettre.php?type=consomne', function (e) {
-            $("#Lettre" + i).html(e);
-            $("#Lettre" + i).show("slow");
-            finPreparation();
+        $.get('/lettre.php?type=consomne', function (e) {                                                               // Permet de récupérer une consomne aléatoire depuis le fichier lettre.php en ajax
+            $("#Lettre" + i).html(e);                                                                                   // Ajoute la consomne dans un bouton
+            $("#Lettre" + i).show("slow");                                                                              // Fait apparaitre le bouton avec la consomne
+            finPreparation();                                                                                           // Appel la fonction finPreparation();
         });
     });
 
@@ -45,13 +36,10 @@ var i = 1;
      * Clique du bouton Voyelle
      */
     $(".btnVoyelle").click(function () {
-        /**
-         * Permet de récupérer une voyelle depuis le fichier lettre.php
-         */
-        $.get('/lettre.php?type=voyelle', function (e) {
-            $("#Lettre" + i).html(e);
-            $("#Lettre" + i).show("slow");
-            finPreparation();
+        $.get('/lettre.php?type=voyelle', function (e) {                                                                // Permet de récupérer une voyelle aléatoire depuis le fichier lettre.php en ajax
+            $("#Lettre" + i).html(e);                                                                                   // Ajoute la voyelle dans un bouton
+            $("#Lettre" + i).show("slow");                                                                              // Fait apparaitre le bouton avec la voyelle
+            finPreparation();                                                                                           // Appel la fonction finPreparation();
         });
     });
 
@@ -59,39 +47,21 @@ var i = 1;
      * Lorsque l'on clique sur une des lettres proposer
      */
     $(".Lettre").click(function () {
-        /**
-         * Faire apparaitre la lettre cliqué en dessous pour former le mot
-         */
-        $("#Reponse" + j).show("slow").html(this.textContent);
-
-        /**
-         * Desactive la lettre cliquer
-         */
-        this.disabled = true;
-        j++;
-
-        /**
-         * Active le bouton reset
-         */
-        $(".btnResetLettre").removeAttr("disabled");
+        $("#Reponse" + j).show("slow").html(this.textContent);                                                          // Faire apparaitre la lettre cliqué en dessous pour former le mot
+        this.disabled = true;                                                                                           // Desactive la lettre cliquer
+        j++;                                                                                                            // Incrémentation de la variable j permettant d'ajouter une lettre au mot
+        $(".btnResetLettre").removeAttr("disabled");                                                                    // Active le bouton reset
     });
 
     /**
      * Lorsque l'on clique sur le bouton reset
      */
     $(".btnResetLettre").click(function () {
+        $(".btnResetLettre").attr('disabled', true);                                                                    // Desactive le bouton reset
 
-        /**
-         * Desactive le bouton reset
-         */
-        $(".btnResetLettre").attr('disabled', true);
-
-        /**
-         * Reset le mot composé et déverouille les lettres cliquées avant
-         */
         for(blbl = 1; blbl < 10; blbl++){
-            $("#Lettre" + blbl).removeAttr("disabled");
-            $("#Reponse" + blbl).hide("slow");
+            $("#Lettre" + blbl).removeAttr("disabled");                                                                 // Réactive les boutons des lettres proposé
+            $("#Reponse" + blbl).hide("slow");                                                                          // Cache le mot composé
         }
         j=1;
     });
@@ -100,21 +70,15 @@ var i = 1;
      * Permet de rejouer et meme refresh la page
      */
     $(".F5").click(function () {
-        /**
-         * Desactive tout les boutons
-         */
         for(blbl = 1; blbl < 10; blbl++){
-            $("#Reponse" + blbl).hide("slow");
-            $("#Lettre" + blbl).hide("slow");
+            $("#Reponse" + blbl).hide("slow");                                                                          // Cache le mot composé
+            $("#Lettre" + blbl).hide("slow");                                                                           // Cache les lettres proposé
         }
-        $(".btnResetLettre").hide("slow");
-        $(".btnConsomne").hide("slow");
-        $(".btnVoyelle").hide("slow");
+        $(".btnResetLettre").hide("slow");                                                                              // Cache le bouton reset
+        $(".btnConsomne").hide("slow");                                                                                 // Cache le bouton consomne
+        $(".btnVoyelle").hide("slow");                                                                                  // Cache le bouton voyelle
 
-        /**
-         * Reload la page au bout de 0.7 seconde
-         */
-        setTimeout("location.reload()",700);
+        setTimeout("location.reload()",700);                                                                            // Reload la page au bout de 0.7 seconde
     });
 }());
 
@@ -122,27 +86,17 @@ var i = 1;
  * Cette fonctione permet d'increment i et de vérifier si le nombre de lettre est inférieur a 10
  */
 function finPreparation() {
-    /**
-     * Incrémentation de i
-     */
-    i++;
+    i++;                                                                                                                // Incrémentation de i
+    $(".F5").removeAttr("disabled");                                                                                    // Dévérouille le bouton F5
 
-    /**
-     * Dévérouille le bouton F5
-     */
-    $(".F5").removeAttr("disabled");
+    if(i>9){                                                                                                            // Vérification du nombre de lettre
+        $(".btnConsomne").attr('disabled', true);                                                                       // Désactivation du bouton consomne
+        $(".btnVoyelle").attr('disabled', true);                                                                        // Désactivation du bouton voyelle
 
-    /**
-     * Vérification du nombre de lettre
-     */
-    if(i>9){
-        $(".btnConsomne").attr('disabled', true);
-        $(".btnVoyelle").attr('disabled', true);
-
-        $(".btnResetLettre").show("slow");
+        $(".btnResetLettre").show("slow");                                                                              // Activation du bouton reset
 
         for(blbl = 1; blbl < 10; blbl++){
-            $("#Lettre" + blbl).removeAttr("disabled");
+            $("#Lettre" + blbl).removeAttr("disabled");                                                                 // Active les lettres sortie aléatoirement afin de pouvoir commencer à jouer
         }
     }
 }

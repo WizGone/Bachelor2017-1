@@ -7,7 +7,8 @@ Exercice fait en Web comprenant :
     - JavaScript
     - PHP
     - Ajax
+    - jQuery
     
-Cette application est stocké sur[GitHub](https://github.com/)et également sur un serveur local.
+Cette application est stocké sur [GitHub](https://github.com/) et également sur un serveur local.
 
-Travail réalisé par**Lecoutre Antoine**, etudiant de Bachelor au[Lycée Saint Joseph de Boulogne sur mer](http://www.st-jo.com/).
+Travail réalisé par**Lecoutre Antoine**, etudiant de Bachelor au [Lycée Saint Joseph de Boulogne sur mer](http://www.st-jo.com/).
